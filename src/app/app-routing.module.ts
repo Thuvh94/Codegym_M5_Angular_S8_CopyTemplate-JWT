@@ -22,12 +22,8 @@ const routes: Routes = [
       },
       {
         path: 'users',
-        component: UserListComponent
-      },
-      {
-        path: 'users/add',
-        component: UserAddComponent
-      },
+        loadChildren: () => import('./user/user.module').then(m => m.UserModule)
+      }
     ]
   }
 ];
